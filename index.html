@@ -1,50 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Watch History Tracker</title>
-	<link rel="stylesheet" href="/styles/styles.css">
+  <meta charset="UTF-8">
+  <title>Watch History Tracker</title>
+  <link rel="stylesheet" href="/styles/styles.css">
+  <!-- <style>
+    button {
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    #all-data {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #f9f9f9;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+  </style> -->
+  
 </head>
 <body>
-	<header>
-		<h1>Watch History Tracker</h1>
-	</header>
-	<main>
-		<section>
-			<h2>TV Series</h2>
-			<div class="container">
-				<label for="series-name">Name:</label>
-				<input type="text" id="series-name" placeholder="Enter series name...">
-				<label for="series-season">Season:</label>
-				<input type="number" id="series-season" placeholder="Enter season number...">
-				<button id="add-series-btn">Add</button>
-			</div>
-			<ul id="series-list"></ul>
-		</section>
-		<section>
-			<h2>Movies</h2>
-			<div class="container">
-				<label for="movie-name">Name:</label>
-				<input type="text" id="movie-name" placeholder="Enter movie name...">
-				<button id="add-movie-btn">Add</button>
-			</div>
-			<ul id="movie-list"></ul>
-		</section>
-		<section>
-			<h2>Animes</h2>
-			<div class="container">
-				<label for="anime-name">Name:</label>
-				<input type="text" id="anime-name" placeholder="Enter anime name...">
-				<label for="anime-season">Season:</label>
-				<input type="number" id="anime-season" placeholder="Enter season number...">
-				<button id="add-anime-btn">Add</button>
-			</div>
-			<ul id="anime-list"></ul>
-		</section>
+  
+  <h1>Watch History Tracker</h1>
+  
+  <h2>Series</h2>
+  <label for="series-name">Name:</label>
+  <input type="text" id="series-name">
+  <br>
+  <label for="series-season">Season:</label>
+  <input type="number" id="series-season">
+  <br>
+  <label for="series-episode">Episode:</label>
+  <input type="number" id="series-episode">
+  <br>
+  <button onclick="addSeries()">Add Series</button>
+  
+  <h2>Movies</h2>
+  <label for="movie-name">Name:</label>
+  <input type="text" id="movie-name">
+  <br>
+  <label for="movie-year">Year:</label>
+  <input type="number" id="movie-year">
+  <br>
+  <button onclick="addMovie()">Add Movie</button>
+  
+  <h2>Anime</h2>
+  <label for="anime-name">Name:</label>
+  <input type="text" id="anime-name">
+  <br>
+  <label for="anime-episode">Episode:</label>
+  <input type="number" id="anime-episode">
+  <br>
+  <button onclick="addAnime()">Add Anime</button>
+  
+  <button onclick="displayAllData()">Show All Watch History</button>
 
-        <p>stored data: </p>
-	</main>
-	<script src="/scripts/script.js"></script>
+  <div id="all-data"></div>
+  
+  <script src="scripts/script.js"></script>
+  
 </body>
 </html>

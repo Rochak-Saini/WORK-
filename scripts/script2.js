@@ -94,6 +94,30 @@ function updateAnimeUI() {
   }
 }
 
+function displayAllData() {
+  let allData = "<h2>All Watch History</h2><ul>";
+  
+  // Loop through each series in seriesData array and add to allData variable
+  for(let i = 0; i < seriesData.length; i++) {
+    allData += `<li>Series: ${seriesData[i].name}, Season: ${seriesData[i].season}, Episode: ${seriesData[i].episode}</li>`;
+  }
+  
+  // Loop through each movie in movieData array and add to allData variable
+  for(let i = 0; i < movieData.length; i++) {
+    allData += `<li>Movie: ${movieData[i].name}, Year: ${movieData[i].year}</li>`;
+  }
+  
+  // Loop through each anime in animeData array and add to allData variable
+  for(let i = 0; i < animeData.length; i++) {
+    allData += `<li>Anime: ${animeData[i].name}, Episode: ${animeData[i].episode}</li>`;
+  }
+  
+  allData += "</ul>";
+  
+  // Add the allData variable to an HTML element
+  document.getElementById("all-data").innerHTML = allData;
+}
+
 // Adding event listeners to the buttons
 addSeriesBtn.addEventListener('click', addSeries);
 addMovieBtn.addEventListener('click', addMovie);
