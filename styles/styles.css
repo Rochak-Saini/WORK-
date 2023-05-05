@@ -1,81 +1,84 @@
-/* Global styles */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f1f1f1;
-  }
-  
-  h1, h2 {
-    margin-top: 50px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  input[type="text"], input[type="number"] {
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  label {
-    display: inline-block;
-    width: 100px;
-    text-align: right;
-    margin-right: 10px;
-  }
-  
-  button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #3e8e41;
-  }
-  
-  /* Watch history table */
-  table {
-    margin: 0 auto;
-    border-collapse: collapse;
-  }
-  
-  th, td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  th {
-    background-color: #4CAF50;
-    color: white;
-  }
-  
-  /* Show all watch history section */
-  #show-all {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #f9f9f9;
-    padding: 20px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-  }
-  
-  #show-all button {
-    margin: 0 auto;
-  }
-  
-  #show-all table {
-    width: 80%;
-    margin-top: 20px;
-  }
-  
+  font-family: Arial, sans-serif;
+  background-color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+input[type="submit"] {
+  margin-top: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+table {
+  margin-top: 50px;
+  border-collapse: collapse;
+  width: 80%;
+  max-width: 800px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 12px;
+}
+
+th {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+td:last-child {
+  text-align: center;
+}
+
+button {
+  background-color: #f44336;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #d32f2f;
+}

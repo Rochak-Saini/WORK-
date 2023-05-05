@@ -5,11 +5,12 @@ const addSeriesBtn = document.getElementById('add-series-btn');
 const seriesList = document.getElementById('series-list');
 
 const movieNameInput = document.getElementById('movie-name');
+const movieYearInput = document.getElementById('movie-year');
 const addMovieBtn = document.getElementById('add-movie-btn');
 const movieList = document.getElementById('movie-list');
 
 const animeNameInput = document.getElementById('anime-name');
-const animeSeasonInput = document.getElementById('anime-season');
+const animeEpisodeInput = document.getElementById('anime-episode');
 const addAnimeBtn = document.getElementById('add-anime-btn');
 const animeList = document.getElementById('anime-list');
 
@@ -47,14 +48,17 @@ function updateSeriesUI() {
 
 function addMovie() {
   const movieName = movieNameInput.value.trim();
-  if (movieName === '') {
+  const movieYear = movieYearInput.value.trim();
+  if (movieName === '' || movieYear === '') {
     return;
   }
   const movie = {
-    name: movieName
+    name: movieName,
+    year: movieYear
   };
   movieData.push(movie);
   movieNameInput.value = '';
+  movieYearInput.value = '';
   updateMovieUI();
 }
 
@@ -63,24 +67,24 @@ function updateMovieUI() {
   for (let i = 0; i < movieData.length; i++) {
     const movie = movieData[i];
     const listItem = document.createElement('li');
-    listItem.innerText = `${movie.name}`;
+    listItem.innerText = `${movie.name} (Year ${movie.year})`;
     movieList.appendChild(listItem);
   }
 }
 
 function addAnime() {
   const animeName = animeNameInput.value.trim();
-  const animeSeason = animeSeasonInput.value.trim();
-  if (animeName === '' || animeSeason === '') {
+  const animeEpisode = animeEpisodeInput.value.trim();
+  if (animeName === '' || animeEpisode === '') {
     return;
   }
   const anime = {
     name: animeName,
-    season: animeSeason
+    episode: animeEpisode
   };
   animeData.push(anime);
   animeNameInput.value = '';
-  animeSeasonInput.value = '';
+  animeEpisodeInput.value = '';
   updateAnimeUI();
 }
 
@@ -89,7 +93,7 @@ function updateAnimeUI() {
   for (let i = 0; i < animeData.length; i++) {
     const anime = animeData[i];
     const listItem = document.createElement('li');
-    listItem.innerText = `${anime.name} (Season ${anime.season})`;
+    listItem.innerText = `${anime.name} (Episode ${anime.episode})`;
     animeList.appendChild(listItem);
   }
 }
@@ -99,7 +103,7 @@ function displayAllData() {
   
   // Loop through each series in seriesData array and add to allData variable
   for(let i = 0; i < seriesData.length; i++) {
-    allData += `<li>Series: ${seriesData[i].name}, Season: ${seriesData[i].season}, Episode: ${seriesData[i].episode}</li>`;
+    allData += `<li>Series: ${seriesData[i].name}, Season: ${seriesData[i].season}</li>`;
   }
   
   // Loop through each movie in movieData array and add to allData variable

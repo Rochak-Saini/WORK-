@@ -26,18 +26,15 @@
 <body>
   
   <h1>Watch History Tracker</h1>
-  
+  <form action="connect.php" method="post">
   <h2>Series</h2>
   <label for="series-name">Name:</label>
-  <input type="text" id="series-name">
+  <input type="text" name="series-name" id="series-name">
   <br>
   <label for="series-season">Season:</label>
-  <input type="number" id="series-season">
+  <input type="number" name='series-season' id="series-season">
   <br>
-  <label for="series-episode">Episode:</label>
-  <input type="number" id="series-episode">
-  <br>
-  <button onclick="addSeries()">Add Series</button>
+  <button id="series-input" onclick="addSeries()">Add Series</button>
   
   <h2>Movies</h2>
   <label for="movie-name">Name:</label>
@@ -46,7 +43,7 @@
   <label for="movie-year">Year:</label>
   <input type="number" id="movie-year">
   <br>
-  <button onclick="addMovie()">Add Movie</button>
+  <button id='movies-input' onclick="addMovie()">Add Movie</button>
   
   <h2>Anime</h2>
   <label for="anime-name">Name:</label>
@@ -56,8 +53,8 @@
   <input type="number" id="anime-episode">
   <br>
   <button onclick="addAnime()">Add Anime</button>
-  
-  <button onclick="displayAllData()">Show All Watch History</button>
+  </form>
+  <button id="anime-input" onclick="displayAllData()">Show All Watch History</button>
 
   <div id="all-data"></div>
   
